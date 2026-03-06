@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b118pvmscylk6"]
 
-[ext_resource type="Script" uid="uid://blpnouewtqu4j" path="res://rigid_body_2d.gd" id="1_o72ex"]
+[ext_resource type="Script" uid="uid://blpnouewtqu4j" path="res://scenes/rigid_body_2d.gd" id="1_o72ex"]
 [ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_gccpt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_63e2e"]
