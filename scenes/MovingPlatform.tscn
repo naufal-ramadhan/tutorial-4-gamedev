@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b6urb6ennbn8b"]
+
+[ext_resource type="Script" uid="uid://clq22v6qv03wm" path="res://scenes/moving_platform.gd" id="1_2onec"]
+[ext_resource type="Texture2D" uid="uid://df0ayq1r4uyry" path="res://assets/kenney_platformerpack/PNG/Tiles/bridgeB.png" id="1_6xvjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2onec"]
+size = Vector2(126, 39)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1113815338]
+script = ExtResource("1_2onec")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1002267159]
+texture = ExtResource("1_6xvjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=669479639]
+position = Vector2(1, -44.5)
+shape = SubResource("RectangleShape2D_2onec")

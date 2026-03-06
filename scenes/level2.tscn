@@ -1,0 +1,87 @@
+[gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
+
+[ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_d6fun"]
+[ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_if4l3"]
+[ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_4038r"]
+[ext_resource type="PackedScene" uid="uid://d1ll1d8cfdkbf" path="res://scenes/win_trigger.tscn" id="4_yqkch"]
+[ext_resource type="Texture2D" uid="uid://b01y2s6ghnd3g" path="res://assets/kenney_platformerpack/PNG/Items/flagRed1.png" id="5_6ep0u"]
+[ext_resource type="PackedScene" uid="uid://fvwtvsnn65qw" path="res://scenes/loseTrigger.tscn" id="6_hrcei"]
+[ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="7_hrcei"]
+[ext_resource type="PackedScene" uid="uid://c0v45uudafjd7" path="res://scenes/fallingWeight.tscn" id="8_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://b6urb6ennbn8b" path="res://scenes/MovingPlatform.tscn" id="9_xa7n4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if4l3"]
+texture = ExtResource("2_if4l3")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, 31.34999, 64, -64, -26.949997)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, 64, 64, -64, 64, -26.949997, -34.65, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -29.150002, -64, -26.949997)
+
+[sub_resource type="TileSet" id="TileSet_4038r"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_if4l3")
+
+[node name="Level2" type="Node2D" unique_id=694645093]
+
+[node name="Player" parent="." unique_id=1820586598 instance=ExtResource("1_d6fun")]
+position = Vector2(-83, 89)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1935881980]
+tile_map_data = PackedByteArray("AAD8/wEAAAAHAAEAAAD9/wEAAAAHAAEAAAD+/wEAAAAHAAEAAAD//wEAAAAHAAEAAAAAAAEAAAAEAAEAAAABAAIAAAAEAAEAAAACAAMAAAAEAAEAAAAIAAQAAAADAAAAAAAJAAMAAAAFAAEAAAAKAAIAAAAFAAEAAAALAAEAAAAFAAEAAAAMAAAAAAAFAAEAAAANAAAAAAAHAAEAAAAOAAAAAAAHAAEAAAAPAAAAAAAHAAEAAAD8/wIAAAABAAAAAAD9/wIAAAABAAAAAAD+/wIAAAABAAAAAAD//wIAAAABAAAAAAAAAAIAAAAHAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAAAAAQAAAABAAAAAAD//wQAAAABAAAAAAD+/wQAAAABAAAAAAD9/wQAAAABAAAAAAD8/wQAAAABAAAAAAD8/wMAAAABAAAAAAD9/wMAAAABAAAAAAD+/wMAAAABAAAAAAD//wMAAAABAAAAAAAAAAMAAAABAAAAAAABAAMAAAAHAAAAAAAJAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAPAAMAAAABAAAAAAAPAAIAAAABAAAAAAAPAAEAAAABAAAAAAAOAAEAAAABAAAAAAAOAAIAAAABAAAAAAAOAAMAAAABAAAAAAAMAAMAAAABAAAAAAAMAAIAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAALAAMAAAABAAAAAAALAAIAAAABAAAAAAAKAAMAAAABAAAAAAADAAQAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_4038r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=791069094]
+position = Vector2(-384, -113)
+texture = ExtResource("3_4038r")
+
+[node name="WinTrigger" parent="." unique_id=331734990 instance=ExtResource("4_yqkch")]
+position = Vector2(1796, -209)
+
+[node name="Sprite2D" type="Sprite2D" parent="WinTrigger" unique_id=1857266631]
+position = Vector2(51, 146)
+texture = ExtResource("5_6ep0u")
+
+[node name="LoseArea" parent="." unique_id=590228790 instance=ExtResource("6_hrcei")]
+position = Vector2(-583, 933)
+
+[node name="Spawner" type="Node2D" parent="." unique_id=828056877]
+position = Vector2(826, -247)
+script = ExtResource("7_hrcei")
+obstacle = ExtResource("8_xa7n4")
+
+[node name="AnimatableBody2D" parent="." unique_id=1113815338 instance=ExtResource("9_xa7n4")]
+position = Vector2(664, 581)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://fvwtvsnn65qw"]
+
+[ext_resource type="Script" uid="uid://dagj55sb6nbh0" path="res://scenes/lose_trigger.gd" id="1_aa25g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrydm"]
+size = Vector2(2685, 59)
+
+[node name="Area2D" type="Area2D" unique_id=590228790]
+script = ExtResource("1_aa25g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1295600537]
+position = Vector2(1332.5, 39.5)
+shape = SubResource("RectangleShape2D_mrydm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
