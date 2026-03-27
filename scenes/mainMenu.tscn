@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bjrgilkw6m3gd"]
+
+[ext_resource type="Script" uid="uid://blsc05tcng3d8" path="res://link_button.gd" id="1_3d1i7"]
+[ext_resource type="Texture2D" uid="uid://dhsqj8dybb7fq" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="2_48ign"]
+[ext_resource type="Script" uid="uid://bngaadc2aynx2" path="res://scenes/stage_select_button.gd" id="2_l7wge"]
+
+[node name="MainMenu" type="MarginContainer" unique_id=413034164]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=216073793]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1211427101]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=727312841]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.27450982, 0.15686275, 1)
+theme_override_font_sizes/font_size = 50
+text = "Judul Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1292629947]
+layout_mode = 2
+alignment = 1
+
+[node name="NewGameButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=168867439]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_font_sizes/font_size = 20
+text = "New Game"
+script = ExtResource("1_3d1i7")
+scene_to_load = "Level1"
+
+[node name="StageSelectButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=978344881]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Stage Select"
+script = ExtResource("2_l7wge")
+scene_to_load = "stage_select"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=46449690]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=961906473]
+layout_mode = 2
+texture = ExtResource("2_48ign")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGameButton" to="HBoxContainer/VBoxContainer/VBoxContainer/NewGameButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StageSelectButton" to="HBoxContainer/VBoxContainer/VBoxContainer/StageSelectButton" method="_on_Stage_Select_pressed"]

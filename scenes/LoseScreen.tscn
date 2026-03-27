@@ -1,10 +1,42 @@
 [gd_scene format=3 uid="uid://g1b35y8xj8vv"]
 
 [ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1"]
+[ext_resource type="Script" uid="uid://td7n4ei7mmc1" path="res://scenes/lose_screen.gd" id="1_x3j6d"]
 
 [node name="LoseScreen" type="Node2D" unique_id=518158138]
+script = ExtResource("1_x3j6d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1055786862]
 position = Vector2(578, 323.99997)
 scale = Vector2(0.82000005, 0.60761905)
 texture = ExtResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1541559426]
+offset_top = 349.0
+offset_right = 1152.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=653201729]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=1764410822]
+layout_mode = 2
+
+[node name="RetryButton" type="LinkButton" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=1848761634]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9943451, 0, 0.13530281, 1)
+theme_override_font_sizes/font_size = 50
+text = "Retry"
+
+[node name="CenterContainer2" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=434591994]
+layout_mode = 2
+
+[node name="BackToMenuButton" type="LinkButton" parent="MarginContainer/VBoxContainer/CenterContainer2" unique_id=1838506109]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Back To Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer2/BackToMenuButton" to="." method="_on_main_menu_button_pressed"]

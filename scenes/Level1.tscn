@@ -1,12 +1,14 @@
 [gd_scene format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Script" uid="uid://covxgcegafv7h" path="res://scenes/level_1.gd" id="1_ecr63"]
 [ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_bwv4p"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_dw26h"]
 [ext_resource type="PackedScene" uid="uid://cqntdxpl0oyu0" path="res://scenes/AreaTrigger.tscn" id="4_lrl65"]
 [ext_resource type="PackedScene" uid="uid://fvwtvsnn65qw" path="res://scenes/loseTrigger.tscn" id="5_lrl65"]
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="6_76388"]
 [ext_resource type="PackedScene" uid="uid://b118pvmscylk6" path="res://scenes/FallingFish.tscn" id="7_svatc"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="9_n34uq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhdn"]
 texture = ExtResource("2_bwv4p")
@@ -55,6 +57,7 @@ physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_odhdn")
 
 [node name="Level1" type="Node2D" unique_id=1851416310]
+script = ExtResource("1_ecr63")
 
 [node name="Player" parent="." unique_id=911448349 instance=ExtResource("1")]
 position = Vector2(434, 470)
@@ -79,3 +82,7 @@ position = Vector2(-2, 1205)
 position = Vector2(1732, -161)
 script = ExtResource("6_76388")
 obstacle = ExtResource("7_svatc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886156875]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1960173755 instance=ExtResource("9_n34uq")]

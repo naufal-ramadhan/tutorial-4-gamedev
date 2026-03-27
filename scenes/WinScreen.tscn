@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://vpcgqywhega1"]
 
-[ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://Assets/Keanu.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0xi3jghkp5hk" path="res://assets/Keanu.png" id="1"]
+[ext_resource type="Script" uid="uid://d1giirr3ss4n0" path="res://scenes/win_screen.gd" id="2_okh34"]
 
 [node name="WinScreen" type="Sprite2D" unique_id=403469534]
 position = Vector2(572.1645, 326.5)
 scale = Vector2(1.1168662, 1.1401051)
 texture = ExtResource("1")
+script = ExtResource("2_okh34")

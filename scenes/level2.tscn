@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dyg3yqhjwuwxo"]
 
+[ext_resource type="Script" uid="uid://b8n7emak6swiv" path="res://scenes/level_2.gd" id="1_bo4dx"]
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_d6fun"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_if4l3"]
 [ext_resource type="Texture2D" uid="uid://chgqimvh7rdh6" path="res://assets/Familiar Looking Rocket.png" id="3_4038r"]
@@ -9,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bm4rfm2jkrx0n" path="res://scenes/spawner.gd" id="7_hrcei"]
 [ext_resource type="PackedScene" uid="uid://c0v45uudafjd7" path="res://scenes/fallingWeight.tscn" id="8_xa7n4"]
 [ext_resource type="PackedScene" uid="uid://b6urb6ennbn8b" path="res://scenes/MovingPlatform.tscn" id="9_xa7n4"]
+[ext_resource type="PackedScene" uid="uid://751ou282p0pr" path="res://scenes/LifeCounter.tscn" id="11_76toy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_if4l3"]
 texture = ExtResource("2_if4l3")
@@ -56,6 +58,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_if4l3")
 
 [node name="Level2" type="Node2D" unique_id=694645093]
+script = ExtResource("1_bo4dx")
 
 [node name="Player" parent="." unique_id=1820586598 instance=ExtResource("1_d6fun")]
 position = Vector2(-83, 89)
@@ -85,3 +88,7 @@ obstacle = ExtResource("8_xa7n4")
 
 [node name="AnimatableBody2D" parent="." unique_id=1113815338 instance=ExtResource("9_xa7n4")]
 position = Vector2(664, 581)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=729814432]
+
+[node name="LifeCounter" parent="CanvasLayer" unique_id=1960173755 instance=ExtResource("11_76toy")]
